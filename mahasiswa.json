@@ -46,5 +46,28 @@
                 "Prestasi": "Sand Box Hackathon 1st Winner - Samsan Tech"
             }
         }
+    ],
+    "Caca": [
+        {
+            "BioData": {
+                "Hobi": [
+                    "Bernyanyi",
+                    "Memasak",
+                    "Menggambar"
+                ],
+                "Prestasi": "Juara 1 Coding"
+            }
+        }
+    ],
+    "Kaka": [
+        {
+            "BioData": {
+                "Hobi": [
+                    "Game",
+                    "Musik"
+                ],
+                "Prestasi": "Juara 2 Coding"
+            }
+        }
     ]
 }
