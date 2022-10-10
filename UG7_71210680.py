@@ -1,7 +1,6 @@
 class PrefixConverter:
     def __init__(self):
         self.stackList = []
-        self.operator = ['']
     # method untuk menambahkan data baru 
     def push(self,data):
         self.stackList.append(data)
