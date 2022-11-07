@@ -65,7 +65,7 @@ class PriorityQueueSortedList:
     def printIsiQueue(self):
         print("Isi Semua Queue: ",end='')
         for i in range(len(self._data)):
-            print(self._data[i], end=', ')
+            print(self._data[i], end=' ')
 
 sortedList = PriorityQueueSortedList()
 sortedList.add("Shalom", 5)
