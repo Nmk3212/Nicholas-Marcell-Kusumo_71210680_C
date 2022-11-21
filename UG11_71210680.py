@@ -24,17 +24,17 @@ class RakObat:
         return (self._getHash(key)+index) % self.size
 
     # menambahkan key pada hash table
-    def tambahObat(self, key, value):
+    def tambahObat(self, jenisObat, namaObat):
         # periksa apakah key_hash sudah terpakai
-        key_hash = self._getHash(key)
+        key_hash = self._getHash(jenisObat)
         # buat pasangan key value
-        key_value = [key, value]
+        key_value = [jenisObat, namaObat]
 
         if self.map[key_hash] is None:
             self.map[key_hash] = list([key_value])
             return True
         else:
-            key_hash = self._probing(key)
+            key_hash = self._probing(jenisObat)
             if key_hash is None:
                 print("Rak Obat anda sudah penuh")
                 return False
@@ -42,33 +42,33 @@ class RakObat:
         self.map[key_hash] = list([key_value])
         return False
 
-    def lihatObat(self, key):
-        key_hash = self._getHash(key)
+    def lihatObat(self, jenisObat):
+        key_hash = self._getHash(jenisObat)
         if (self.map[key_hash] is not None) and (self.map[key_hash] != 'deleted'):
             for index in range(self.size):
                 #mencari dengan melakukan probing
-                key_hash = self._linearProbing(key, index)
+                key_hash = self._linearProbing(jenisObat, index)
                 # periksa apakah key adalah data yg akan dihapus
-                if(self.map[key_hash][0][0] == key):
+                if(self.map[key_hash][0][0] == jenisObat):
                     return self.map[key_hash][0][1]
         
-        print("Key",key,"tidak ditemukan")
+        print("Key",jenisObat,"tidak ditemukan")
         return "None"
 
-    def ambilObat(self, key):
-        key_hash = self._getHash(key)
+    def ambilObat(self, jenisObat):
+        key_hash = self._getHash(jenisObat)
         if self.map[key_hash] is None:
             return False
         for index in range(self.size):
             #menghapus dengan melakukan linear probing
-            key_hash = self._linearProbing(key, index)
+            key_hash = self._linearProbing(jenisObat, index)
             # periksa apakah key adalah data yg akan dihapus
-            if(self.map[key_hash][0][0] == key):
-                print("obat", key,"diambil dari rak")
+            if(self.map[key_hash][0][0] == jenisObat):
+                print("obat", jenisObat,"diambil dari rak")
                 self.map[key_hash] = "deleted"
                 return True
         
-        print("Key",key,"tidak ditemukan")
+        print("Key",jenisObat,"tidak ditemukan")
         return False
 
     def printAll(self):
